@@ -16,7 +16,7 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
     private var Actions: [SBAAction] = []
     
     public static func create() -> SBAActionSheetPicker {
-        let actionSheetPicker = UIStoryboard(name: "SBAActionSheetPicker", bundle: nil).instantiateViewController(withIdentifier: "SBAActionSheetPicker") as! SBAActionSheetPicker
+        let actionSheetPicker = UIStoryboard(name: "SBAActionSheetPicker", bundle: Bundle.init(for: self)).instantiateViewController(withIdentifier: "SBAActionSheetPicker") as! SBAActionSheetPicker
         return actionSheetPicker
     }
     
