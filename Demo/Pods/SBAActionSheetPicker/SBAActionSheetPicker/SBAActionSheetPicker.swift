@@ -15,8 +15,8 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var bgView: UIView!
     private var Actions: [SBAAction] = []
     
-    static func create() -> SBAActionSheetPicker {
-        let actionSheetPicker = UIStoryboard(name: "SBAActionSheetPicker", bundle: nil).instantiateViewController(withIdentifier: "SBAActionSheetPicker") as! SBAActionSheetPicker
+    public static func create() -> SBAActionSheetPicker {
+        let actionSheetPicker = UIStoryboard(name: "SBAActionSheetPicker", bundle: Bundle.init(for: self)).instantiateViewController(withIdentifier: "SBAActionSheetPicker") as! SBAActionSheetPicker
         return actionSheetPicker
     }
     
@@ -50,7 +50,7 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         self.animateDownAndDismiss(action: nil)
     }
     
-    func animateUp() -> Void {
+    public func animateUp() -> Void {
 
         let originalFram = self.bgView.frame
         self.bgView.frame = self.bgView.frame.offsetBy(dx: 0, dy: self.bgView.frame.height)
@@ -108,10 +108,10 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         self.animateDownAndDismiss(action: action)
     }
     
-    func addAction(action: SBAAction) -> Void {
+    public func addAction(action: SBAAction) -> Void {
         self.Actions.append(action)
     }
-    func addActions(actions: [SBAAction]) -> Void {
+    public func addActions(actions: [SBAAction]) -> Void {
         self.Actions.append(contentsOf: actions)
     }
 }

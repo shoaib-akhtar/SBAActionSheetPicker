@@ -9,8 +9,8 @@
 import UIKit
 
 public class SBAAction: NSObject {
-    var title : String?
-    var image : UIImage?
+    public var title : String?
+    public var image : UIImage?
     private var completion : ((SBAAction)->Void)?
     
     public init(title: String?,image: UIImage?,completion: @escaping ((SBAAction)->Void)){
@@ -19,7 +19,7 @@ public class SBAAction: NSObject {
         self.image=image
         self.completion=completion
     }
-    func handleCompletion() -> Void {
+    public func handleCompletion() -> Void {
         self.completion!(self)
     }
 }
