@@ -20,7 +20,7 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         return actionSheetPicker
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.delegate=self
@@ -28,7 +28,7 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         // Do any additional setup after loading the view.
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         DispatchQueue.main.async {
             if self.tableView.contentSize.height >= self.view.frame.size.height {
@@ -41,7 +41,7 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         self.animateUp()
     }
     
-    override func didReceiveMemoryWarning() {
+    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -74,28 +74,28 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.Actions.count
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+   public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+   public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+   public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 14;
     }
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+   public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 14;
     }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+   public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return UIView.init()
     }
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+   public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView.init()
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SBAPickerCell") as? SBAPickerCell
         
         let action = self.Actions[indexPath.row]
@@ -103,7 +103,7 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         cell?.imgView.image=action.image
         return cell!
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let action = self.Actions[indexPath.row]
         self.animateDownAndDismiss(action: action)
     }

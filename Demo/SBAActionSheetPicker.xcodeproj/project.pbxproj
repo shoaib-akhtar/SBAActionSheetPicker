@@ -29,6 +29,10 @@
 		38C74FFA208F39A30067D315 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38A66F1D208DF4B50092549C /* Info.plist */; };
 		38C74FFB208F39A30067D315 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38A66F1D208DF4B50092549C /* Info.plist */; };
 		38C74FFC208F39A40067D315 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38A66F1D208DF4B50092549C /* Info.plist */; };
+		48675D5A20C511580051B2F0 /* SBAActionSheetPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48675D5620C511580051B2F0 /* SBAActionSheetPicker.storyboard */; };
+		48675D5B20C511580051B2F0 /* SBAPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48675D5720C511580051B2F0 /* SBAPickerCell.swift */; };
+		48675D5C20C511580051B2F0 /* SBAAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48675D5820C511580051B2F0 /* SBAAction.swift */; };
+		48675D5D20C511580051B2F0 /* SBAActionSheetPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48675D5920C511580051B2F0 /* SBAActionSheetPicker.swift */; };
 		65F1263E29C24DE551DFBE7C /* Pods_SBAActionSheetPickerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107151828CA7A42E28A733F8 /* Pods_SBAActionSheetPickerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +70,10 @@
 		38A66F31208DF4B50092549C /* SBAActionSheetPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBAActionSheetPickerUITests.swift; sourceTree = "<group>"; };
 		38A66F33208DF4B50092549C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44A267552C3C9DB3DC9C56AC /* Pods-SBAActionSheetPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBAActionSheetPicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBAActionSheetPicker/Pods-SBAActionSheetPicker.release.xcconfig"; sourceTree = "<group>"; };
+		48675D5620C511580051B2F0 /* SBAActionSheetPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBAActionSheetPicker.storyboard; sourceTree = "<group>"; };
+		48675D5720C511580051B2F0 /* SBAPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBAPickerCell.swift; sourceTree = "<group>"; };
+		48675D5820C511580051B2F0 /* SBAAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBAAction.swift; sourceTree = "<group>"; };
+		48675D5920C511580051B2F0 /* SBAActionSheetPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBAActionSheetPicker.swift; sourceTree = "<group>"; };
 		9172F12FF3D0F602C5600DE5 /* Pods-SBAActionSheetPickerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBAActionSheetPickerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBAActionSheetPickerTests/Pods-SBAActionSheetPickerTests.release.xcconfig"; sourceTree = "<group>"; };
 		92971D85582C3C5F6231C0F6 /* Pods-SBAActionSheetPickerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBAActionSheetPickerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SBAActionSheetPickerUITests/Pods-SBAActionSheetPickerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB96B491D81091C715E94576 /* Pods-SBAActionSheetPickerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SBAActionSheetPickerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SBAActionSheetPickerTests/Pods-SBAActionSheetPickerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +148,7 @@
 		38A66F10208DF4B30092549C /* SBAActionSheetPicker */ = {
 			isa = PBXGroup;
 			children = (
+				48675D5520C511580051B2F0 /* SBAActionSheetPicker */,
 				38A66F11208DF4B30092549C /* AppDelegate.swift */,
 				38A66F13208DF4B30092549C /* ViewController.swift */,
 				38A66F15208DF4B30092549C /* Main.storyboard */,
@@ -168,6 +177,17 @@
 			path = SBAActionSheetPickerUITests;
 			sourceTree = "<group>";
 		};
+		48675D5520C511580051B2F0 /* SBAActionSheetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				48675D5620C511580051B2F0 /* SBAActionSheetPicker.storyboard */,
+				48675D5720C511580051B2F0 /* SBAPickerCell.swift */,
+				48675D5820C511580051B2F0 /* SBAAction.swift */,
+				48675D5920C511580051B2F0 /* SBAActionSheetPicker.swift */,
+			);
+			path = SBAActionSheetPicker;
+			sourceTree = "<group>";
+		};
 		A087A95A9AF96CF06B112D45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +209,6 @@
 				38A66F0A208DF4B30092549C /* Sources */,
 				38A66F0B208DF4B30092549C /* Frameworks */,
 				38A66F0C208DF4B30092549C /* Resources */,
-				A958B67B2A9E729B93437CC9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48675D5A20C511580051B2F0 /* SBAActionSheetPicker.storyboard in Resources */,
 				38C74FFA208F39A30067D315 /* Info.plist in Resources */,
 				38A66F1C208DF4B50092549C /* LaunchScreen.storyboard in Resources */,
 				38A66F19208DF4B50092549C /* Assets.xcassets in Resources */,
@@ -354,24 +374,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A958B67B2A9E729B93437CC9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SBAActionSheetPicker/Pods-SBAActionSheetPicker-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SBAActionSheetPicker/SBAActionSheetPicker.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SBAActionSheetPicker.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBAActionSheetPicker/Pods-SBAActionSheetPicker-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FCEF716ED8765A9553F9FA4A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -399,6 +401,9 @@
 			files = (
 				38A66F14208DF4B30092549C /* ViewController.swift in Sources */,
 				38A66F12208DF4B30092549C /* AppDelegate.swift in Sources */,
+				48675D5C20C511580051B2F0 /* SBAAction.swift in Sources */,
+				48675D5D20C511580051B2F0 /* SBAActionSheetPicker.swift in Sources */,
+				48675D5B20C511580051B2F0 /* SBAPickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
