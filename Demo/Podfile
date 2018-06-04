@@ -6,7 +6,7 @@ target 'SBAActionSheetPicker' do
   use_frameworks!
 
   # Pods for SBAActionSheetPicker
-#  pod 'SBAActionSheetPicker', :git => 'https://github.com/shoaib-akhtar/SBAActionSheetPicker.git'
+  pod 'SBAActionSheetPicker', :git => 'https://github.com/shoaib-akhtar/SBAActionSheetPicker.git'
 
   target 'SBAActionSheetPickerTests' do
     inherit! :search_paths

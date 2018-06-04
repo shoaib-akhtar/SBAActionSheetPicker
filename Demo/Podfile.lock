@@ -1,3 +1,21 @@
-PODFILE CHECKSUM: c0078fbe5fa4d8e78a604443fc60602f11ff9ffa
+PODS:
+  - SBAActionSheetPicker (1.0)
+
+DEPENDENCIES:
+  - SBAActionSheetPicker (from `https://github.com/shoaib-akhtar/SBAActionSheetPicker.git`)
+
+EXTERNAL SOURCES:
+  SBAActionSheetPicker:
+    :git: https://github.com/shoaib-akhtar/SBAActionSheetPicker.git
+
+CHECKOUT OPTIONS:
+  SBAActionSheetPicker:
+    :commit: 513f5da4d149b9c5cacc874b1086b3a613c1a628
+    :git: https://github.com/shoaib-akhtar/SBAActionSheetPicker.git
+
+SPEC CHECKSUMS:
+  SBAActionSheetPicker: 43442a1c5de991c1593f4e44e61f0f163d755da8
+
+PODFILE CHECKSUM: d20ffc7fc82765fda24574ed56116fb6e9d19618
 
 COCOAPODS: 1.5.3

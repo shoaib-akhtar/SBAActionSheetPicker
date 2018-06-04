@@ -1,0 +1,6 @@
+framework module SBAActionSheetPicker {
+  umbrella header "SBAActionSheetPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

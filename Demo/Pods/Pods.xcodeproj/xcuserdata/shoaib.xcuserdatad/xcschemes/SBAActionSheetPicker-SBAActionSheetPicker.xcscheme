@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "724E0D1FDC22C65AF3D2365C133F32A4"
-               BuildableName = "Pods_SBAActionSheetPicker.framework"
-               BlueprintName = "Pods-SBAActionSheetPicker"
+               BlueprintIdentifier = "AF04B99CD678B3BC791B9B9A13D23CC9"
+               BuildableName = "SBAActionSheetPicker.bundle"
+               BlueprintName = "SBAActionSheetPicker-SBAActionSheetPicker"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "724E0D1FDC22C65AF3D2365C133F32A4"
-            BuildableName = "Pods_SBAActionSheetPicker.framework"
-            BlueprintName = "Pods-SBAActionSheetPicker"
+            BlueprintIdentifier = "AF04B99CD678B3BC791B9B9A13D23CC9"
+            BuildableName = "SBAActionSheetPicker.bundle"
+            BlueprintName = "SBAActionSheetPicker-SBAActionSheetPicker"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
