@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                      :tag => s.version.to_s }
   s.platform     = :ios, '9.0'
   s.requires_arc = true
-  s.source_files = 'Classes/*.{swift,storyboard}'
-  s.resource_bundles = { "Classes" => "Classes/*.{lproj,storyboard}" }
+  s.source_files = 'SBAActionSheetPicker/*.{h,m,swift}'
+  s.resource_bundles = { "SBAActionSheetPicker" => "SBAActionSheetPicker/*.{lproj,storyboard}" }
   s.frameworks   = 'Foundation', 'UIKit'
 end

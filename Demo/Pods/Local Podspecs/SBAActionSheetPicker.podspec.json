@@ -20,6 +20,9 @@
   },
   "requires_arc": true,
   "source_files": "Classes/*.{swift,storyboard}",
+  "resource_bundles": {
+    "Classes": "Classes/*.{lproj,storyboard}"
+  },
   "frameworks": [
     "Foundation",
     "UIKit"

@@ -10,11 +10,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SBAActionSheetPicker:
-    :commit: d56708f3af9cc5d5861b1da39a6f7a767f7f85af
+    :commit: 745a46f7215d7e3ddcab2111f5a3e8e28b23b7c9
     :git: https://github.com/shoaib-akhtar/SBAActionSheetPicker.git
 
 SPEC CHECKSUMS:
-  SBAActionSheetPicker: be332f0b099d611ed281fd9d774774542cb70f0d
+  SBAActionSheetPicker: 13fcb9cf5236bbb279dba2a6004b88b015e38c09
 
 PODFILE CHECKSUM: d20ffc7fc82765fda24574ed56116fb6e9d19618
 
