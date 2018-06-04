@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SBAActionSheetPicker:
-    :commit: d9d2ee79486adea5d6622cc7ba03e44a187cb36e
+    :commit: 3542d1a3eb61a307e157967527929caaeb68e6f2
     :git: https://github.com/shoaib-akhtar/SBAActionSheetPicker.git
 
 SPEC CHECKSUMS:
