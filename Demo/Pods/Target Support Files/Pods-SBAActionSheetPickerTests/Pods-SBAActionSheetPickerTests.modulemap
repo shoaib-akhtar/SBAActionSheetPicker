@@ -1,0 +1,6 @@
+framework module Pods_SBAActionSheetPickerTests {
+  umbrella header "Pods-SBAActionSheetPickerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

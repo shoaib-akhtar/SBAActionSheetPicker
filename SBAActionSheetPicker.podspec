@@ -10,5 +10,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.0'
   s.requires_arc = true
   s.source_files = 'Classes/*.{swift,storyboard}'
+  s.resource_bundles = { "Classes" => "Classes/*.{lproj,storyboard}" }
   s.frameworks   = 'Foundation', 'UIKit'
 end
