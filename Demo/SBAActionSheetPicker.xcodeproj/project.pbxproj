@@ -189,7 +189,6 @@
 				38A66F0A208DF4B30092549C /* Sources */,
 				38A66F0B208DF4B30092549C /* Frameworks */,
 				38A66F0C208DF4B30092549C /* Resources */,
-				1FC7D6BA46643BE51F18A120 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,24 +317,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1FC7D6BA46643BE51F18A120 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SBAActionSheetPicker/Pods-SBAActionSheetPicker-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SBAActionSheetPicker/SBAActionSheetPicker.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SBAActionSheetPicker.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SBAActionSheetPicker/Pods-SBAActionSheetPicker-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7665E8C9C59F3808171D8F88 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
