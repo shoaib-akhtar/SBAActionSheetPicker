@@ -13,7 +13,7 @@ public class SBAAction: NSObject {
     var image : UIImage?
     private var completion : ((SBAAction)->Void)?
     
-    public init(title: String?,image: UIImage?,completion: @escaping ((SBAAction)->Void)){
+    init(title: String?,image: UIImage?,completion: @escaping ((SBAAction)->Void)){
         super.init()
         self.title=title
         self.image=image
