@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SBAPickerCell: UITableViewCell {
+public class SBAPickerCell: UITableViewCell {
 
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!

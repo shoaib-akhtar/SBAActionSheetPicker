@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SBAAction: NSObject {
+public class SBAAction: NSObject {
     var title : String?
     var image : UIImage?
     private var completion : ((SBAAction)->Void)?

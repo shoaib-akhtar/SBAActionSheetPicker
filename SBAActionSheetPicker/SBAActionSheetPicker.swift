@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITableViewDataSource {
+public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var bgViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
