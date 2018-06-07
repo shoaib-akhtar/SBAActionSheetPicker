@@ -50,7 +50,7 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         self.animateDownAndDismiss(action: nil)
     }
     
-    public func animateUp() -> Void {
+    func animateUp() -> Void {
 
         let originalFram = self.bgView.frame
         self.bgView.frame = self.bgView.frame.offsetBy(dx: 0, dy: self.bgView.frame.height)
@@ -74,7 +74,7 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.Actions.count
     }
    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
