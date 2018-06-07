@@ -25,21 +25,20 @@ class ViewController: UIViewController {
         
         let actionSheetPicker = SBAActionSheetPicker.create(.white) as SBAActionSheetPicker
         
-        let action1 = SBAAction.init(title: "Accessibility", image: #imageLiteral(resourceName: "accessibility"),color: .black) { (action) in
+        let action1 = SBAAction.init(title: "Accessibility", image: UIImage.init(named: "accessibility"),color: .black) { (action) in
             print("Accessibility")
             self.imgView.image = action.image
         }
         
-        let action2 = SBAAction.init(title: "Acount Balance", image: #imageLiteral(resourceName: "account_balance"),color: .black) { (action) in
+        let action2 = SBAAction.init(title: "Acount Balance", image: UIImage.init(named: "account_balance"),color: .black) { (action) in
             print("Acount Balance")
             self.imgView.image = action.image
 
         }
         
-        let action3 = SBAAction.init(title: "Close", image: #imageLiteral(resourceName: "close"),color: .black) { (action) in
+        let action3 = SBAAction.init(title: "Close", image: UIImage.init(named: "close"),color: .black) { (action) in
             print("Close")
             self.imgView.image = action.image
-
         }
         
         actionSheetPicker.addActions(actions: [action1,action2,action3])
