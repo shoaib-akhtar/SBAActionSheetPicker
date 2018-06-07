@@ -14,15 +14,17 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bgView: UIView!
     private var Actions: [SBAAction] = []
+    private var bgColor : UIColor = .white
     
-    public static func create() -> SBAActionSheetPicker {
+    public static func create(_ backgroundColor : UIColor = .white) -> SBAActionSheetPicker {
         let actionSheetPicker = UIStoryboard(name: "SBAActionSheetPicker", bundle: Bundle.init(for: self)).instantiateViewController(withIdentifier: "SBAActionSheetPicker") as! SBAActionSheetPicker
+        actionSheetPicker.bgColor=backgroundColor
         return actionSheetPicker
     }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.backgroundColor=self.bgColor
         self.tableView.delegate=self
         self.tableView.dataSource=self
         // Do any additional setup after loading the view.
@@ -100,7 +102,9 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         
         let action = self.Actions[indexPath.row]
         cell?.lblTitle.text=action.title
+        cell?.lblTitle.textColor = action.titleColor
         cell?.imgView.image=action.image
+        cell?.backgroundColor=self.bgColor
         return cell!
     }
    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
