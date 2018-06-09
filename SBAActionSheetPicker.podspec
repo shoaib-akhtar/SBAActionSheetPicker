@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.resource_bundles = { "SBAActionSheetPicker" => "SBAActionSheetPicker/*.{lproj,storyboard}" }
   s.resource = 'SBAActionSheetPicker/SBAActionSheetPicker.storyboard'
   s.frameworks   = 'Foundation', 'UIKit'
-  swift_version = '4.0'
+  s.swift_version = '4.0'
 end
