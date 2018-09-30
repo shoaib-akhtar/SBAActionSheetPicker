@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SBAActionSheetPicker"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "Easy to use customised action sheet picker inspired by UIAlertController"
   s.homepage     = "https://github.com/shoaib-akhtar/SBAActionSheetPicker"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.resource_bundles = { "SBAActionSheetPicker" => "SBAActionSheetPicker/*.{lproj,storyboard}" }
   s.resource = 'SBAActionSheetPicker/SBAActionSheetPicker.storyboard'
   s.frameworks   = 'Foundation', 'UIKit'
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
 end
