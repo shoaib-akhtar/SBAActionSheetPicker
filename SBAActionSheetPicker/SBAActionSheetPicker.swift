@@ -38,7 +38,7 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
             }else{
                 self.bgViewHeightConstraint.constant=self.tableView.contentSize.height
             }
-            self.tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: UITableViewScrollPosition.top, animated: false)
+            self.tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: UITableView.ScrollPosition.top, animated: false)
         }
         self.animateUp()
     }
@@ -80,7 +80,7 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         return self.Actions.count
     }
    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    return UITableView.automaticDimension
     }
    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
