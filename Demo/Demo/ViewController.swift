@@ -23,9 +23,9 @@ class ViewController: UIViewController {
 
     @IBAction func btnClicked(_ sender: Any) {
         
-        let actionSheetPicker = SBAActionSheetPicker.create(.white) as SBAActionSheetPicker
+        let actionSheetPicker = SBAActionSheetPicker.create(.purple) as SBAActionSheetPicker
         
-        let action1 = SBAAction.init(title: "Accessibility", image: UIImage.init(named: "accessibility"),color: .black) { (action) in
+        let action1 = SBAAction.init(title: "Accessibility", image: UIImage.init(named: "accessibility"),color: .green) { (action) in
             print("Accessibility")
             self.imgView.image = action.image
         }
