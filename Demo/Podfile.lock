@@ -1,5 +1,5 @@
 PODS:
-  - SBAActionSheetPicker (1.0)
+  - SBAActionSheetPicker (1.11)
 
 DEPENDENCIES:
   - SBAActionSheetPicker (from `https://github.com/shoaib-akhtar/SBAActionSheetPicker.git`)
@@ -10,12 +10,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SBAActionSheetPicker:
-    :commit: 5122fceabdbefa6c037cfe0ea8065e1cd6c30e84
+    :commit: 1ff392ed6bf0e52888f088be860bc8d03207b4c5
     :git: https://github.com/shoaib-akhtar/SBAActionSheetPicker.git
 
 SPEC CHECKSUMS:
-  SBAActionSheetPicker: 997e19bae9e324693303f930bdeb597a47feb8ee
+  SBAActionSheetPicker: 3b96c456ed15a423883780f9c83c50f5f0be9a8d
 
 PODFILE CHECKSUM: c9eb2d4ab134b8394d143d66afb6dc994701b085
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.2

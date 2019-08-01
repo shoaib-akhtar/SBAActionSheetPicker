@@ -14,7 +14,7 @@ public class SBAAction: NSObject {
     public var image : UIImage?
     private var completion : ((SBAAction)->Void)?
     
-    public init(title: String?,image: UIImage?,color : UIColor = .black,completion: @escaping ((SBAAction)->Void)){
+    public init(title: String?,image: UIImage?,color : UIColor = .white,completion: @escaping ((SBAAction)->Void)){
         super.init()
         self.title=title
         self.image=image

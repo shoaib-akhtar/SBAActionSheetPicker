@@ -118,4 +118,13 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
     public func addActions(actions: [SBAAction]) -> Void {
         self.Actions.append(contentsOf: actions)
     }
+    
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+   
+        if let touch = touches.first, !bgView.bounds.contains(touch.location(in: bgView))  {
+            self.viewTapped(touch)
+            return
+            
+        }
+    }
 }
