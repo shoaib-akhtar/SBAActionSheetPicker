@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SBAActionSheetPicker"
-  s.version      = "1.11"
+  s.version      = "2.0"
   s.summary      = "Easy to use customised action sheet picker inspired by UIAlertController"
   s.homepage     = "https://github.com/shoaib-akhtar/SBAActionSheetPicker"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
