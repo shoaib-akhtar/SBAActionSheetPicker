@@ -6,22 +6,17 @@
 //  Copyright © 2018 Shoaib Akhtar. All rights reserved.
 //
 
-import UIKit
+enum SBAType : Int{
+    case action
+    case info
+}
+protocol SBAActionType {
+    func type() -> SBAType
+}
 
-public class SBAAction: NSObject {
-    public var title : String?
-    public var titleColor : UIColor = .black
-    public var image : UIImage?
-    private var completion : ((SBAAction)->Void)?
-    
-    public init(title: String?,image: UIImage?,color : UIColor = .white,completion: @escaping ((SBAAction)->Void)){
-        super.init()
-        self.title=title
-        self.image=image
-        self.titleColor = color
-        self.completion=completion
-    }
-    public func handleCompletion() -> Void {
-        self.completion!(self)
+public class SBAAction: SBAUiSettings, SBAActionType {
+    func type() -> SBAType {
+        return .action
     }
 }
+
