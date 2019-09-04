@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sVs-nt-lAG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sVs-nt-lAG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SBAActionSheetPicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,21 +25,76 @@
                                     <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Oi-rL-6EN"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D9f-10-Dpc">
-                                <rect key="frame" x="67" y="182" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D9f-10-Dpc">
+                                <rect key="frame" x="67" y="182" width="241" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="MCo-Jh-sWA">
                                 <rect key="frame" x="79" y="523" width="217" height="144"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYd-4g-wlx">
+                                <rect key="frame" x="270" y="64" width="105" height="30"/>
+                                <state key="normal" title="Don't touch me"/>
+                                <connections>
+                                    <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kkY-OI-sCJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kep-Oz-2td">
+                                <rect key="frame" x="135" y="64" width="105" height="30"/>
+                                <state key="normal" title="Don't touch me"/>
+                                <connections>
+                                    <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X0U-Ib-gjf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="558-td-727">
+                                <rect key="frame" x="0.0" y="64" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Don't touch me"/>
+                                <connections>
+                                    <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vjR-XD-Mzv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tP-9u-fEv">
+                                <rect key="frame" x="0.0" y="637" width="105" height="30"/>
+                                <state key="normal" title="Don't touch me"/>
+                                <connections>
+                                    <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEU-xd-QYj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK7-Sw-WmI">
+                                <rect key="frame" x="270" y="637" width="105" height="30"/>
+                                <state key="normal" title="Don't touch me"/>
+                                <connections>
+                                    <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q2o-X4-zxW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRN-GD-XAW">
+                                <rect key="frame" x="135" y="637" width="105" height="30"/>
+                                <state key="normal" title="Don't touch me"/>
+                                <connections>
+                                    <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YU1-CD-DPz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MCo-Jh-sWA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3yP-yE-fQ4"/>
+                            <constraint firstItem="4tP-9u-fEv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5wI-0F-grK"/>
+                            <constraint firstItem="D9f-10-Dpc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="118" id="8cL-Om-NlB"/>
+                            <constraint firstItem="Kep-Oz-2td" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cfb-vo-16H"/>
                             <constraint firstItem="MCo-Jh-sWA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EqR-l2-8im"/>
                             <constraint firstItem="tyq-Qw-i28" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FWL-aL-tix"/>
                             <constraint firstItem="D9f-10-Dpc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FpH-1F-fvr"/>
+                            <constraint firstItem="JYd-4g-wlx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OAS-Xi-CAz"/>
+                            <constraint firstItem="BK7-Sw-WmI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZiZ-tW-zAN"/>
+                            <constraint firstItem="BK7-Sw-WmI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="e5D-bK-dHw"/>
+                            <constraint firstItem="Kep-Oz-2td" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fCa-hu-ZcO"/>
                             <constraint firstItem="tyq-Qw-i28" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nSH-oT-ccw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JYd-4g-wlx" secondAttribute="trailing" id="qkm-m7-cQS"/>
+                            <constraint firstItem="XRN-GD-XAW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="rrO-oc-aCy"/>
+                            <constraint firstItem="XRN-GD-XAW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sa3-Rr-RcH"/>
                             <constraint firstItem="tyq-Qw-i28" firstAttribute="top" secondItem="D9f-10-Dpc" secondAttribute="bottom" constant="8.5" id="stp-nu-Xzi"/>
+                            <constraint firstItem="4tP-9u-fEv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tNa-CL-oHY"/>
+                            <constraint firstItem="D9f-10-Dpc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="toT-W2-fdZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
