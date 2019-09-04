@@ -9,24 +9,25 @@
 import UIKit
 enum UIUserInterfaceIdiom : Int {
     case unspecified
-    
-    case phone // iPhone and iPod touch style UI
-    case pad // iPad style UI
+    case phone
+    case pad
 }
-public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+public class SBAActionSheetPicker: UIViewController {
 
     private  var handler : ((SBAAction,Int,Int)->Void)?
-    @IBOutlet weak var bgViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var tableView: UITableView!{
+    @IBOutlet weak private var bgViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak private var tableView: UITableView!{
         didSet{
             tableView.layer.cornerRadius = 10
-            tableView.layer.masksToBounds = true
-            self.tableView.backgroundColor = self.bgColor
-            self.tableView.delegate=self
-            self.tableView.dataSource=self
+            tableView.backgroundColor = self.bgColor
+            tableView.delegate=self
+            tableView.dataSource=self
+            tableView.estimatedSectionHeaderHeight = 0
+           
         }
     }
-    @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak private var bgView: UIView!
     private var actionModals: [SBAActionModal] = []
     private var bgColor : UIColor = .white
     
@@ -45,30 +46,29 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         DispatchQueue.main.async {
             if self.tableView.contentSize.height >= self.view.frame.size.height && UIDevice.current.userInterfaceIdiom == .phone {
                 self.bgViewHeightConstraint.constant=self.view.frame.size.height - 64
             }else if  UIDevice.current.userInterfaceIdiom == .phone{
-                self.bgViewHeightConstraint.constant=self.tableView.contentSize.height + 3
+                self.bgViewHeightConstraint.constant=self.tableView.contentSize.height 
             } else if UIDevice.current.userInterfaceIdiom == .pad {
                 self.preferredContentSize = CGSize(width: self.tableView.contentSize.width, height: self.tableView.contentSize.height + 20)
-               self.bgViewHeightConstraint.constant=self.tableView.contentSize.height + 5
-                self.tableView .layoutIfNeeded()
+               self.bgViewHeightConstraint.constant=self.tableView.contentSize.height
             }
-         //   self.tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: UITableView.ScrollPosition.top, animated: false)
+
+            self.animateUp()
         
-        if UIDevice.current.userInterfaceIdiom == .phone{
-        self.animateUp()
         }
-        }
-    }
-  
-    @IBAction func viewTapped(_ sender: Any) {
-        self.animateDownAndDismiss(action: nil)
     }
     
-    func animateUp() -> Void {
-
+  
+    @IBAction func viewTapped(_ sender: Any) {
+        self.animateDownAndDismiss()
+    }
+    
+private func animateUp() -> Void {
+    if UIDevice.current.userInterfaceIdiom == .phone{
         let originalFram = self.bgView.frame
         self.bgView.frame = self.bgView.frame.offsetBy(dx: 0, dy: self.bgView.frame.height)
         
@@ -77,7 +77,8 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
             self.bgView.frame=originalFram
         }
     }
-    func animateDownAndDismiss(action: SBAAction?) -> Void {
+}
+   private func animateDownAndDismiss() -> Void {
         
         if UIDevice.current.userInterfaceIdiom == .phone {
             
@@ -85,37 +86,49 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
                 self.view.backgroundColor =  UIColor.clear
                 self.bgView.frame = self.bgView.frame.offsetBy(dx: 0, dy: self.bgView.frame.height)
             }) { (Completed) in
-                self.dismiss(animated: false, completion: {
-//                    if let unwraped : SBAAction = action{
-//                        unwraped.handleCompletion()
-//                    }
-                })
+                self.dismiss(animated: false, completion:nil)
             }
         }else {
-            self.dismiss(animated: false, completion: {
-//                if let unwraped : SBAAction = action{
-//                    unwraped.handleCompletion()
-//                }
-            })
+            self.dismiss(animated: false, completion:nil)
         }
     }
     
+    
+    public func addAction(action: SBAActionModal) -> Void {
+        self.actionModals.append(action)
+    }
+    public func addActions(actions: [SBAActionModal]) -> Void {
+        self.actionModals.append(contentsOf: actions)
+    }
+    
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+   
+        if let touch = touches.first, !bgView.bounds.contains(touch.location(in: bgView))  {
+            self.viewTapped(touch)
+            return
+        }
+    }
+    
+    private  func isLastAction(indexPath:IndexPath)-> Bool {
+        return  self.actionModals.count - 1  == indexPath.section
+    }
+}
+extension SBAActionSheetPicker: UITableViewDelegate, UITableViewDataSource {
     public func numberOfSections(in tableView: UITableView) -> Int {
         return self.actionModals.count
     }
-    
-//     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//         return self.actionModals[section].sectionTitle ?? ""
-//    }
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return self.actionModals[section].actions.count
+        return self.actionModals[section].getCount()
     }
-   public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return UITableView.automaticDimension
-    }
-   public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+//    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if  self.actionModals[section].hasTitle() && !isLastAction(indexPath: IndexPath(row: 0, section: section)) {
             return 40
@@ -123,17 +136,17 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
             return 5
         }
     }
-   public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0    ;
     }
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let title = self.actionModals[section].sectionTitle {
+        if let title = self.actionModals[section].getTitle() {
             let headerCell = tableView.dequeueReusableCell(withIdentifier: "SBAHeaderCell") as? SBAHeaderCell
             headerCell?.headerTitle.text = title
-            headerCell?.configure()
+            headerCell?.configure(modal: self.actionModals[section])
             return headerCell
         } else {
-        return UIView()
+            return UIView()
         }
     }
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -141,7 +154,7 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let action =  self.actionModals[indexPath.section].actions[indexPath.row] as? SBAActionType{
+        if let action =  self.actionModals[indexPath.section].action(at: indexPath.row) as? SBAActionType{
             switch action.type(){
             case .info:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SBAInfoTableViewCell") as? SBAInfoTableViewCell
@@ -178,29 +191,12 @@ public class SBAActionSheetPicker: UIViewController, UITableViewDelegate, UITabl
         }
         return UITableViewCell()
     }
-    func isLastAction(indexPath:IndexPath)-> Bool {
-      return  self.actionModals.count - 1  == indexPath.section
-    }
+    
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if  let action = self.actionModals[indexPath.section].actions[indexPath.row] as? SBAAction {
+        if  let action = self.actionModals[indexPath.section].action(at: indexPath.row) as? SBAAction {
             self.handler?(action,indexPath.section,indexPath.row)
-            self.animateDownAndDismiss(action: action)
+            self.animateDownAndDismiss()
         }
     }
     
-    public func addAction(action: SBAActionModal) -> Void {
-        self.actionModals.append(action)
-    }
-    public func addActions(actions: [SBAActionModal]) -> Void {
-        self.actionModals.append(contentsOf: actions)
-    }
-    
-    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-   
-        if let touch = touches.first, !bgView.bounds.contains(touch.location(in: bgView))  {
-            self.viewTapped(touch)
-            return
-            
-        }
-    }
 }

@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYc-j2-j5E">
-                                <rect key="frame" x="10" y="395" width="355" height="267"/>
+                                <rect key="frame" x="10" y="400" width="355" height="267"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5r-Si-YPf">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="40" sectionFooterHeight="1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5r-Si-YPf">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="267"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,6 +41,7 @@
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="APg-d3-V3c" secondAttribute="height" multiplier="1:1" id="8Lo-Yf-EJg"/>
+                                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="c9s-rS-d4u"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSq-Vx-zI5">
@@ -178,7 +179,7 @@
                         <constraints>
                             <constraint firstItem="AYc-j2-j5E" firstAttribute="leading" secondItem="6Si-A0-Kx1" secondAttribute="leading" constant="10" id="1cl-yC-U0B"/>
                             <constraint firstItem="6Si-A0-Kx1" firstAttribute="trailing" secondItem="AYc-j2-j5E" secondAttribute="trailing" constant="10" id="u2W-7Z-3ra"/>
-                            <constraint firstItem="6Si-A0-Kx1" firstAttribute="bottom" secondItem="AYc-j2-j5E" secondAttribute="bottom" constant="5" id="uLv-ZE-jjr"/>
+                            <constraint firstItem="6Si-A0-Kx1" firstAttribute="bottom" secondItem="AYc-j2-j5E" secondAttribute="bottom" id="uLv-ZE-jjr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Si-A0-Kx1"/>
                     </view>
