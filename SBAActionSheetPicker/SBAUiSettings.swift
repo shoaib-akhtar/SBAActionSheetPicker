@@ -34,7 +34,7 @@ public class SBAUiSettings: NSObject,SBAUi {
     func getFont() -> UIFont {
         return textFont
     }
-    func getTitle() -> String? {
+    public func getTitle() -> String? {
         return title
     }
     
